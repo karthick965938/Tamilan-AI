@@ -1,0 +1,75 @@
+id,line,category,difficulty,humor_level
+1,Are you a semicolon? Because you complete me.,Basic Programming,beginner,high
+2,Are you an exception? Because I can't handle you.,Basic Programming,beginner,high
+3,"You must be a loop, because you keep running through my mind.",Basic Programming,beginner,medium
+4,Are you a function? Because I'd call you anytime.,Basic Programming,beginner,high
+5,Are you a variable? Because my love for you is always dynamic.,Basic Programming,beginner,high
+6,You had me at 'Hello World.',Basic Programming,beginner,medium
+7,My love for you is like an infinite loop - it never ends.,Basic Programming,beginner,high
+8,Are you a compiler? Because you turn my code into something beautiful.,Basic Programming,beginner,high
+9,You're the exception to my rule.,Language-Specific,beginner,medium
+10,Are you a keyboard? Because you're just my type.,Language-Specific,beginner,high
+11,Are you Python? Because you make my life simpler.,Language-Specific,beginner,high
+12,Is your name Java? Because you keep me awake.,Language-Specific,beginner,high
+13,Are you JavaScript? Because you bring my world to life.,Language-Specific,beginner,high
+14,"You must be HTML, because you structure my world perfectly.",Language-Specific,beginner,medium
+15,Are you CSS? Because you make my life style better.,Language-Specific,beginner,high
+16,"If they made you in C, you would have a pointer to my heart.",Language-Specific,beginner,medium
+17,Are you a Swift protocol? Because you define my expectations.,Git & Version Control,beginner,high
+18,"You must be PHP, because you preprocess my heart.",Git & Version Control,beginner,medium
+19,Are you SQL? Because you SELECT my heart.,Git & Version Control,beginner,high
+20,Are you a Go routine? Because you make my heart run concurrently.,Git & Version Control,beginner,high
+21,Are you Git? Because you've merged perfectly with my heart.,Git & Version Control,intermediate,high
+22,I'm not sure if I should commit to you or just push you away.,Git & Version Control,intermediate,medium
+23,Are you a repository? Because I can't commit without you.,Git & Version Control,intermediate,high
+24,Let's fork this relationship and see where it goes.,Git & Version Control,intermediate,medium
+25,You're like a pull request - I want to merge with you.,Debugging & Errors,intermediate,high
+26,Are you a version control system? Because I can't commit without you.,Debugging & Errors,intermediate,high
+27,My heart just ran a successful 'love you' function.,Debugging & Errors,intermediate,medium
+28,You're the main branch to my repository.,Debugging & Errors,intermediate,medium
+29,Are you a debugger? Because you just fixed all my problems.,Debugging & Errors,intermediate,high
+30,"You must be a 404 error, because I've never found anyone like you.",Debugging & Errors,intermediate,high
+31,Are you a syntax error? Because you stop my world.,Debugging & Errors,intermediate,high
+32,"I must be a bug, because I can't stop thinking about you.",Debugging & Errors,intermediate,medium
+33,You're the solution to all my compilation errors.,Data Structures,intermediate,medium
+34,Are you a stack overflow? Because you've completely taken over my thoughts.,Data Structures,intermediate,high
+35,My code was broken until you came along.,Data Structures,intermediate,medium
+36,Are you an array? Because you hold everything I need.,Data Structures,intermediate,high
+37,"You must be a binary tree, because you make my heart search and sort.",Data Structures,intermediate,medium
+38,Are you a hash map? Because you're the key to my heart.,Data Structures,intermediate,high
+39,You're like a perfectly optimized algorithm - efficient and beautiful.,Data Structures,intermediate,high
+40,Are you a linked list? Because I want to traverse through life with you.,Data Structures,intermediate,high
+41,"You must be a queue, because I've been waiting for you.",Network & Web,advanced,medium
+42,Are you a stack? Because you're always on top of my mind.,Network & Web,advanced,high
+43,Are you Wi-Fi? Because I'm feeling a strong connection.,Network & Web,advanced,high
+44,"You must be HTTP, because you're the request to my response.",Network & Web,advanced,medium
+45,Are you a API? Because I want to interface with you.,Network & Web,advanced,high
+46,Is your name Google? Because you have everything I'm searching for.,Network & Web,advanced,high
+47,You're like HTTPS - secure and always protecting my heart.,Network & Web,advanced,high
+48,Are you a server? Because my heart responds to your ping.,Network & Web,advanced,high
+49,"You must be a firewall, because you're blocking everyone else out.",Database,advanced,medium
+50,You're the primary key to my database.,Database,advanced,medium
+51,Are you a JOIN statement? Because you complete my query.,Database,advanced,high
+52,"You must be a foreign key, because you link to my heart.",Database,advanced,medium
+53,Are you NULL? Because you complete me.,Database,advanced,high
+54,You're like a well-indexed table - fast and efficient.,Database,advanced,high
+55,Are you a database? Because I want to query you all night.,Database,advanced,high
+56,Are you a class? Because I want to instantiate you.,Database,advanced,high
+57,You're the object of my inheritance.,Object-Oriented,advanced,medium
+58,Are you polymorphism? Because you can be anything I need.,Object-Oriented,advanced,high
+59,"You must be encapsulation, because you hide your beauty so well.",Object-Oriented,advanced,medium
+60,Are you an interface? Because I want to implement everything about you.,Object-Oriented,advanced,high
+61,You're like a singleton - there's only one of you.,Object-Oriented,advanced,high
+62,Are you a microservice? Because you're perfectly designed.,Object-Oriented,advanced,high
+63,"You must be Docker, because you containerize my heart.",Object-Oriented,advanced,medium
+64,Are you cloud computing? Because you make everything scalable.,Object-Oriented,advanced,high
+65,You're like CI/CD - you make everything smooth and automated.,Modern Development,advanced,high
+66,Are you machine learning? Because you're training my heart to love you.,Modern Development,advanced,high
+67,"You must be blockchain, because our connection is immutable.",Modern Development,advanced,medium
+68,Do you believe in love at first byte?,Modern Development,advanced,high
+69,You make my software turn into hardware.,Modern Development,advanced,medium
+70,You're hotter than my laptop's CPU.,Modern Development,advanced,medium
+71,Are you a password? Because you're exactly what I've been looking for.,Modern Development,advanced,high
+72,"You must be root access, because you have complete control over my system.",Modern Development,advanced,medium
+73,Are you a cache? Because you speed up everything in my life.,Playful & Cheesy,advanced,high
+74,You're like a well-commented code - beautiful and easy to understand.,Playful & Cheesy,advanced,high

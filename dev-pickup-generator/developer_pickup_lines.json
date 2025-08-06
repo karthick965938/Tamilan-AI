@@ -1,0 +1,520 @@
+[
+  {
+    "id":1,
+    "line":"Are you a semicolon? Because you complete me.",
+    "category":"Basic Programming",
+    "difficulty":"beginner",
+    "humor_level":"high"
+  },
+  {
+    "id":2,
+    "line":"Are you an exception? Because I can't handle you.",
+    "category":"Basic Programming",
+    "difficulty":"beginner",
+    "humor_level":"high"
+  },
+  {
+    "id":3,
+    "line":"You must be a loop, because you keep running through my mind.",
+    "category":"Basic Programming",
+    "difficulty":"beginner",
+    "humor_level":"medium"
+  },
+  {
+    "id":4,
+    "line":"Are you a function? Because I'd call you anytime.",
+    "category":"Basic Programming",
+    "difficulty":"beginner",
+    "humor_level":"high"
+  },
+  {
+    "id":5,
+    "line":"Are you a variable? Because my love for you is always dynamic.",
+    "category":"Basic Programming",
+    "difficulty":"beginner",
+    "humor_level":"high"
+  },
+  {
+    "id":6,
+    "line":"You had me at 'Hello World.'",
+    "category":"Basic Programming",
+    "difficulty":"beginner",
+    "humor_level":"medium"
+  },
+  {
+    "id":7,
+    "line":"My love for you is like an infinite loop - it never ends.",
+    "category":"Basic Programming",
+    "difficulty":"beginner",
+    "humor_level":"high"
+  },
+  {
+    "id":8,
+    "line":"Are you a compiler? Because you turn my code into something beautiful.",
+    "category":"Basic Programming",
+    "difficulty":"beginner",
+    "humor_level":"high"
+  },
+  {
+    "id":9,
+    "line":"You're the exception to my rule.",
+    "category":"Language-Specific",
+    "difficulty":"beginner",
+    "humor_level":"medium"
+  },
+  {
+    "id":10,
+    "line":"Are you a keyboard? Because you're just my type.",
+    "category":"Language-Specific",
+    "difficulty":"beginner",
+    "humor_level":"high"
+  },
+  {
+    "id":11,
+    "line":"Are you Python? Because you make my life simpler.",
+    "category":"Language-Specific",
+    "difficulty":"beginner",
+    "humor_level":"high"
+  },
+  {
+    "id":12,
+    "line":"Is your name Java? Because you keep me awake.",
+    "category":"Language-Specific",
+    "difficulty":"beginner",
+    "humor_level":"high"
+  },
+  {
+    "id":13,
+    "line":"Are you JavaScript? Because you bring my world to life.",
+    "category":"Language-Specific",
+    "difficulty":"beginner",
+    "humor_level":"high"
+  },
+  {
+    "id":14,
+    "line":"You must be HTML, because you structure my world perfectly.",
+    "category":"Language-Specific",
+    "difficulty":"beginner",
+    "humor_level":"medium"
+  },
+  {
+    "id":15,
+    "line":"Are you CSS? Because you make my life style better.",
+    "category":"Language-Specific",
+    "difficulty":"beginner",
+    "humor_level":"high"
+  },
+  {
+    "id":16,
+    "line":"If they made you in C, you would have a pointer to my heart.",
+    "category":"Language-Specific",
+    "difficulty":"beginner",
+    "humor_level":"medium"
+  },
+  {
+    "id":17,
+    "line":"Are you a Swift protocol? Because you define my expectations.",
+    "category":"Git & Version Control",
+    "difficulty":"beginner",
+    "humor_level":"high"
+  },
+  {
+    "id":18,
+    "line":"You must be PHP, because you preprocess my heart.",
+    "category":"Git & Version Control",
+    "difficulty":"beginner",
+    "humor_level":"medium"
+  },
+  {
+    "id":19,
+    "line":"Are you SQL? Because you SELECT my heart.",
+    "category":"Git & Version Control",
+    "difficulty":"beginner",
+    "humor_level":"high"
+  },
+  {
+    "id":20,
+    "line":"Are you a Go routine? Because you make my heart run concurrently.",
+    "category":"Git & Version Control",
+    "difficulty":"beginner",
+    "humor_level":"high"
+  },
+  {
+    "id":21,
+    "line":"Are you Git? Because you've merged perfectly with my heart.",
+    "category":"Git & Version Control",
+    "difficulty":"intermediate",
+    "humor_level":"high"
+  },
+  {
+    "id":22,
+    "line":"I'm not sure if I should commit to you or just push you away.",
+    "category":"Git & Version Control",
+    "difficulty":"intermediate",
+    "humor_level":"medium"
+  },
+  {
+    "id":23,
+    "line":"Are you a repository? Because I can't commit without you.",
+    "category":"Git & Version Control",
+    "difficulty":"intermediate",
+    "humor_level":"high"
+  },
+  {
+    "id":24,
+    "line":"Let's fork this relationship and see where it goes.",
+    "category":"Git & Version Control",
+    "difficulty":"intermediate",
+    "humor_level":"medium"
+  },
+  {
+    "id":25,
+    "line":"You're like a pull request - I want to merge with you.",
+    "category":"Debugging & Errors",
+    "difficulty":"intermediate",
+    "humor_level":"high"
+  },
+  {
+    "id":26,
+    "line":"Are you a version control system? Because I can't commit without you.",
+    "category":"Debugging & Errors",
+    "difficulty":"intermediate",
+    "humor_level":"high"
+  },
+  {
+    "id":27,
+    "line":"My heart just ran a successful 'love you' function.",
+    "category":"Debugging & Errors",
+    "difficulty":"intermediate",
+    "humor_level":"medium"
+  },
+  {
+    "id":28,
+    "line":"You're the main branch to my repository.",
+    "category":"Debugging & Errors",
+    "difficulty":"intermediate",
+    "humor_level":"medium"
+  },
+  {
+    "id":29,
+    "line":"Are you a debugger? Because you just fixed all my problems.",
+    "category":"Debugging & Errors",
+    "difficulty":"intermediate",
+    "humor_level":"high"
+  },
+  {
+    "id":30,
+    "line":"You must be a 404 error, because I've never found anyone like you.",
+    "category":"Debugging & Errors",
+    "difficulty":"intermediate",
+    "humor_level":"high"
+  },
+  {
+    "id":31,
+    "line":"Are you a syntax error? Because you stop my world.",
+    "category":"Debugging & Errors",
+    "difficulty":"intermediate",
+    "humor_level":"high"
+  },
+  {
+    "id":32,
+    "line":"I must be a bug, because I can't stop thinking about you.",
+    "category":"Debugging & Errors",
+    "difficulty":"intermediate",
+    "humor_level":"medium"
+  },
+  {
+    "id":33,
+    "line":"You're the solution to all my compilation errors.",
+    "category":"Data Structures",
+    "difficulty":"intermediate",
+    "humor_level":"medium"
+  },
+  {
+    "id":34,
+    "line":"Are you a stack overflow? Because you've completely taken over my thoughts.",
+    "category":"Data Structures",
+    "difficulty":"intermediate",
+    "humor_level":"high"
+  },
+  {
+    "id":35,
+    "line":"My code was broken until you came along.",
+    "category":"Data Structures",
+    "difficulty":"intermediate",
+    "humor_level":"medium"
+  },
+  {
+    "id":36,
+    "line":"Are you an array? Because you hold everything I need.",
+    "category":"Data Structures",
+    "difficulty":"intermediate",
+    "humor_level":"high"
+  },
+  {
+    "id":37,
+    "line":"You must be a binary tree, because you make my heart search and sort.",
+    "category":"Data Structures",
+    "difficulty":"intermediate",
+    "humor_level":"medium"
+  },
+  {
+    "id":38,
+    "line":"Are you a hash map? Because you're the key to my heart.",
+    "category":"Data Structures",
+    "difficulty":"intermediate",
+    "humor_level":"high"
+  },
+  {
+    "id":39,
+    "line":"You're like a perfectly optimized algorithm - efficient and beautiful.",
+    "category":"Data Structures",
+    "difficulty":"intermediate",
+    "humor_level":"high"
+  },
+  {
+    "id":40,
+    "line":"Are you a linked list? Because I want to traverse through life with you.",
+    "category":"Data Structures",
+    "difficulty":"intermediate",
+    "humor_level":"high"
+  },
+  {
+    "id":41,
+    "line":"You must be a queue, because I've been waiting for you.",
+    "category":"Network & Web",
+    "difficulty":"advanced",
+    "humor_level":"medium"
+  },
+  {
+    "id":42,
+    "line":"Are you a stack? Because you're always on top of my mind.",
+    "category":"Network & Web",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":43,
+    "line":"Are you Wi-Fi? Because I'm feeling a strong connection.",
+    "category":"Network & Web",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":44,
+    "line":"You must be HTTP, because you're the request to my response.",
+    "category":"Network & Web",
+    "difficulty":"advanced",
+    "humor_level":"medium"
+  },
+  {
+    "id":45,
+    "line":"Are you a API? Because I want to interface with you.",
+    "category":"Network & Web",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":46,
+    "line":"Is your name Google? Because you have everything I'm searching for.",
+    "category":"Network & Web",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":47,
+    "line":"You're like HTTPS - secure and always protecting my heart.",
+    "category":"Network & Web",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":48,
+    "line":"Are you a server? Because my heart responds to your ping.",
+    "category":"Network & Web",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":49,
+    "line":"You must be a firewall, because you're blocking everyone else out.",
+    "category":"Database",
+    "difficulty":"advanced",
+    "humor_level":"medium"
+  },
+  {
+    "id":50,
+    "line":"You're the primary key to my database.",
+    "category":"Database",
+    "difficulty":"advanced",
+    "humor_level":"medium"
+  },
+  {
+    "id":51,
+    "line":"Are you a JOIN statement? Because you complete my query.",
+    "category":"Database",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":52,
+    "line":"You must be a foreign key, because you link to my heart.",
+    "category":"Database",
+    "difficulty":"advanced",
+    "humor_level":"medium"
+  },
+  {
+    "id":53,
+    "line":"Are you NULL? Because you complete me.",
+    "category":"Database",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":54,
+    "line":"You're like a well-indexed table - fast and efficient.",
+    "category":"Database",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":55,
+    "line":"Are you a database? Because I want to query you all night.",
+    "category":"Database",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":56,
+    "line":"Are you a class? Because I want to instantiate you.",
+    "category":"Database",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":57,
+    "line":"You're the object of my inheritance.",
+    "category":"Object-Oriented",
+    "difficulty":"advanced",
+    "humor_level":"medium"
+  },
+  {
+    "id":58,
+    "line":"Are you polymorphism? Because you can be anything I need.",
+    "category":"Object-Oriented",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":59,
+    "line":"You must be encapsulation, because you hide your beauty so well.",
+    "category":"Object-Oriented",
+    "difficulty":"advanced",
+    "humor_level":"medium"
+  },
+  {
+    "id":60,
+    "line":"Are you an interface? Because I want to implement everything about you.",
+    "category":"Object-Oriented",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":61,
+    "line":"You're like a singleton - there's only one of you.",
+    "category":"Object-Oriented",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":62,
+    "line":"Are you a microservice? Because you're perfectly designed.",
+    "category":"Object-Oriented",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":63,
+    "line":"You must be Docker, because you containerize my heart.",
+    "category":"Object-Oriented",
+    "difficulty":"advanced",
+    "humor_level":"medium"
+  },
+  {
+    "id":64,
+    "line":"Are you cloud computing? Because you make everything scalable.",
+    "category":"Object-Oriented",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":65,
+    "line":"You're like CI\/CD - you make everything smooth and automated.",
+    "category":"Modern Development",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":66,
+    "line":"Are you machine learning? Because you're training my heart to love you.",
+    "category":"Modern Development",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":67,
+    "line":"You must be blockchain, because our connection is immutable.",
+    "category":"Modern Development",
+    "difficulty":"advanced",
+    "humor_level":"medium"
+  },
+  {
+    "id":68,
+    "line":"Do you believe in love at first byte?",
+    "category":"Modern Development",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":69,
+    "line":"You make my software turn into hardware.",
+    "category":"Modern Development",
+    "difficulty":"advanced",
+    "humor_level":"medium"
+  },
+  {
+    "id":70,
+    "line":"You're hotter than my laptop's CPU.",
+    "category":"Modern Development",
+    "difficulty":"advanced",
+    "humor_level":"medium"
+  },
+  {
+    "id":71,
+    "line":"Are you a password? Because you're exactly what I've been looking for.",
+    "category":"Modern Development",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":72,
+    "line":"You must be root access, because you have complete control over my system.",
+    "category":"Modern Development",
+    "difficulty":"advanced",
+    "humor_level":"medium"
+  },
+  {
+    "id":73,
+    "line":"Are you a cache? Because you speed up everything in my life.",
+    "category":"Playful & Cheesy",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  },
+  {
+    "id":74,
+    "line":"You're like a well-commented code - beautiful and easy to understand.",
+    "category":"Playful & Cheesy",
+    "difficulty":"advanced",
+    "humor_level":"high"
+  }
+]

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Pickup Lines - Code Your Way to Love</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-color-scheme="dark">
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <span class="logo-icon">{ }</span>
+                        <h1 class="logo-text">Dev Pickup Lines</h1>
+                    </div>
+                    <div class="tagline">Code your way to love 💖</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <!-- Generate Button -->
+                <div class="generate-section">
+                    <button class="btn btn--generate" id="generateBtn">
+                        <span class="generate-icon">⚡</span>
+                        Generate Line
+                    </button>
+                    <div class="generate-hint">Click to get a random developer pickup line</div>
+                </div>
+
+                <!-- Pickup Line Display -->
+                <div class="line-display" id="lineDisplay">
+                    <div class="line-container">
+                        <div class="line-text" id="lineText">
+                            Click "Generate Line" to get your first pickup line!
+                        </div>
+                        <div class="line-meta" id="lineMeta"></div>
+                        <div class="line-actions">
+                            <button class="action-btn favorite-btn" id="favoriteBtn" title="Add to favorites">
+                                <span class="heart-icon">♡</span>
+                            </button>
+                            <button class="action-btn copy-btn" id="copyBtn" title="Copy to clipboard">
+                                <span class="copy-icon">📋</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="filters-section">
+                    <h3 class="filters-title">Filter by Category</h3>
+                    <div class="filter-buttons" id="filterButtons">
+                        <button class="filter-btn active" data-category="all">All</button>
+                    </div>
+                </div>
+
+                <!-- Favorites Section -->
+                <div class="favorites-section">
+                    <div class="favorites-header">
+                        <h3 class="favorites-title">Your Favorites</h3>
+                        <span class="favorites-count" id="favoritesCount">0</span>
+                    </div>
+                    <div class="favorites-list" id="favoritesList">
+                        <div class="empty-favorites">
+                            No favorites yet. Heart some lines to save them here!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coding Tip -->
+                <div class="tip-section" id="tipSection">
+                    <div class="tip-container">
+                        <div class="tip-icon">💡</div>
+                        <div class="tip-text" id="tipText"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>Made with ❤️ for developers who code and love</p>
+                    <div class="footer-decorations">
+                        <span class="decoration">console.log('love');</span>
+                        <span class="decoration">return true;</span>
+                        <span class="decoration">while(true) { love++; }</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Notification -->
+        <div class="notification" id="notification">
+            <div class="notification-content">
+                <span class="notification-text" id="notificationText"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
