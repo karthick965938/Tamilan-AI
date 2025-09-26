@@ -14,6 +14,8 @@ Whether you're a beginner, practitioner, or researcher, this repo provides resou
 
 ## 📺 YouTube Channel
 
+[![Tamilan AI Channel](https://img.shields.io/badge/YouTube-Tamilan%20AI-red?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCQLbJH7MraL2Z74Kt2j2OVA)
+
 **Tamilan AI** - [Subscribe Here](https://www.youtube.com/channel/UCQLbJH7MraL2Z74Kt2j2OVA)
 
 Join our community of AI enthusiasts as we dive deep into:
