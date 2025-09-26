@@ -4,6 +4,8 @@ A fun web application that generates developer-themed pickup lines to help progr
 
 ## 🎥 Tutorial Video
 
+[![Dev Pickup Lines Generator Tutorial](https://img.youtube.com/vi/VxVfqKU6fiw/maxresdefault.jpg)](https://www.youtube.com/watch?v=VxVfqKU6fiw)
+
 📺 **Watch the complete setup and demo**: [Dev Pickup Lines Generator Tutorial](https://www.youtube.com/watch?v=VxVfqKU6fiw)
 
 🔔 **Subscribe to my YouTube channel for more coding tutorials**: [Tamilan AI Channel](https://www.youtube.com/channel/UCQLbJH7MraL2Z74Kt2j2OVA)

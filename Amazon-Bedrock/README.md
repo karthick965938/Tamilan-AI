@@ -12,7 +12,9 @@ This application showcases how to:
 
 ## 🎥 Tutorial Video
 
-📺 **Watch the complete setup and usage guide**: [Amazon Bedrock Tutorial](https://www.youtube.com/watch?v=MpLzS7uJhBc)
+[![Amazon Bedrock Tutorial](https://img.youtube.com/vi/MpLzS7uJhBc/maxresdefault.jpg)](https://www.youtube.com/watch?v=MpLzS7uJhBc)
+
+�  **Watch the complete setup and usage guide**: [Amazon Bedrock Tutorial](https://www.youtube.com/watch?v=MpLzS7uJhBc)
 
 🔔 **Subscribe to my YouTube channel for more AI & coding tutorials**: [Tamilan AI Channel](https://www.youtube.com/channel/UCQLbJH7MraL2Z74Kt2j2OVA)
 

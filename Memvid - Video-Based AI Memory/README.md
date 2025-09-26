@@ -4,6 +4,8 @@ An innovative AI application that transforms text information into video-based m
 
 ## 🎥 Tutorial Video
 
+[![Memvid - Video-Based AI Memory Tutorial](https://img.youtube.com/vi/UwM0dJKlSog/maxresdefault.jpg)](https://www.youtube.com/watch?v=UwM0dJKlSog)
+
 📺 **Watch the complete setup and demo**: [Memvid - Video-Based AI Memory Tutorial](https://www.youtube.com/watch?v=UwM0dJKlSog)
 
 🔔 **Subscribe to my YouTube channel for more AI & coding tutorials**: [Tamilan AI Channel](https://www.youtube.com/channel/UCQLbJH7MraL2Z74Kt2j2OVA)
