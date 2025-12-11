@@ -1,0 +1,98 @@
+.calorie-annotator {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Accuracy Indicator */
+.accuracy-indicator {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--background-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.accuracy-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.accuracy-icon {
+    font-size: 1.5rem;
+}
+
+.accuracy-header h4 {
+    margin: 0;
+    font-size: var(--font-size-h5);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.accuracy-indicator p {
+    margin: 0 0 1.5rem 0;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.accuracy-level {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.accuracy-label {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+.accuracy-bar {
+    flex-grow: 1;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.accuracy-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #fbbf24, #10b981);
+    border-radius: 4px;
+}
+
+.accuracy-percentage {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--text-primary);
+    min-width: 3rem;
+    text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .calorie-annotator {
+        padding: 1rem;
+    }
+
+    .accuracy-level {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .accuracy-bar {
+        width: 100%;
+    }
+
+    .accuracy-percentage {
+        align-self: flex-end;
+    }
+}

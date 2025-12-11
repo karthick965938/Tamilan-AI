@@ -22,7 +22,7 @@
 .storyboard-preview h3 {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
-    font-size: 1.75rem;
+    font-size: var(--font-size-h2);
     margin-bottom: 2rem;
     color: white;
     text-transform: uppercase;
@@ -50,7 +50,7 @@
 
 .concept-header h4 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: var(--font-size-h3);
     font-weight: 700;
     color: #fff;
 }
@@ -61,6 +61,7 @@
     line-height: 1.7;
     margin-bottom: 3rem;
     font-size: 1.0625rem;
+    /* Specific for cinematic description */
 }
 
 .story-elements {
@@ -86,7 +87,7 @@
 
 .story-act h5 {
     margin: 0 0 1rem 0;
-    font-size: 1.125rem;
+    font-size: var(--font-size-h5);
     color: #fff;
     font-family: 'Courier New', monospace;
 }
@@ -99,7 +100,7 @@
 .story-act li {
     color: #bbb;
     margin-bottom: 0.5rem;
-    font-size: 0.9375rem;
+    font-size: var(--font-size-sm);
 }
 
 /* Features Grid - Noir Style */
@@ -142,6 +143,7 @@
 
 .feature-icon {
     font-size: 1.75rem;
+    /* Icon size */
     background: var(--background-secondary);
     width: 3rem;
     height: 3rem;
@@ -163,13 +165,13 @@
 
 .feature-title {
     font-weight: 700;
-    font-size: 1rem;
+    font-size: var(--font-size-body);
     color: var(--text-primary);
     margin-bottom: 0.25rem;
 }
 
 .feature-desc {
-    font-size: 0.875rem;
+    font-size: var(--font-size-xs);
     color: var(--text-secondary);
 }
 

@@ -1,5 +1,31 @@
 /* Shared styles for all functionality components */
 
+:root {
+  /* Typography Scale */
+  --font-size-h1: 2rem;
+  /* Page Titles */
+  --font-size-h2: 1.75rem;
+  /* Section Headers */
+  --font-size-h3: 1.5rem;
+  /* Card Headers */
+  --font-size-h4: 1.25rem;
+  /* Sub-section Headers */
+  --font-size-h5: 1.125rem;
+  /* Small Headers */
+  --font-size-body: 1rem;
+  /* Standard Body Text */
+  --font-size-sm: 0.9375rem;
+  /* Secondary Text / Instructions */
+  --font-size-xs: 0.875rem;
+  /* Metadata / Labels */
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
 /* ============================================
    UPLOAD SECTION - Modern Premium Design
    ============================================ */
@@ -30,7 +56,7 @@
 
 .upload-section h3 {
   margin: 0 0 0.5rem 0;
-  font-size: 1.5rem;
+  font-size: var(--font-size-h3);
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.02em;
@@ -39,7 +65,7 @@
 .upload-instructions {
   margin: 0 0 1.5rem 0;
   color: var(--text-secondary);
-  font-size: 0.9375rem;
+  font-size: var(--font-size-sm);
   line-height: 1.6;
   font-weight: 500;
 }
@@ -52,6 +78,7 @@
   width: 100%;
   padding: 1.125rem 2rem;
   font-size: 1.0625rem;
+  /* Button text often slightly larger than body/sm */
   font-weight: 700;
   color: white;
   background-color: var(--primary-color);
@@ -109,7 +136,7 @@
 
 .tips-section h4 {
   margin: 0 0 1rem 0;
-  font-size: 1.125rem;
+  font-size: var(--font-size-h5);
   font-weight: 700;
   color: var(--secondary-color);
   display: flex;
@@ -127,7 +154,7 @@
   position: relative;
   margin-bottom: 0.75rem;
   color: var(--text-secondary);
-  font-size: 0.9375rem;
+  font-size: var(--font-size-sm);
   line-height: 1.6;
   font-weight: 500;
   padding-left: 0.5rem;
@@ -173,12 +200,12 @@
 
   .upload-section h3,
   .results-section h3 {
-    font-size: 1.25rem;
+    font-size: var(--font-size-h4);
   }
 
   .generate-button {
     padding: 1rem 1.5rem;
-    font-size: 1rem;
+    font-size: var(--font-size-body);
   }
 
   .tips-section {
@@ -198,7 +225,7 @@
 
   .reset-button {
     padding: 0.625rem 1.25rem;
-    font-size: 0.875rem;
+    font-size: var(--font-size-xs);
   }
 }
 
@@ -210,11 +237,11 @@
   }
 
   .tips-section li {
-    font-size: 0.875rem;
+    font-size: var(--font-size-xs);
   }
 
   .generate-button {
-    font-size: 0.9375rem;
+    font-size: var(--font-size-sm);
   }
 }
 
@@ -364,7 +391,7 @@
 .error-message p {
   margin: 0;
   color: var(--error-text);
-  font-size: 0.9375rem;
+  font-size: var(--font-size-sm);
   line-height: 1.5;
   font-weight: 500;
 }

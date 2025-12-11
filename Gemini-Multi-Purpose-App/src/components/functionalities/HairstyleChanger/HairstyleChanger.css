@@ -1,0 +1,47 @@
+.hairstyle-changer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Results grid specific styles if needed */
+.hairstyle-grid {
+    margin-top: 2rem;
+}
+
+/* Metadata Section Improved */
+.metadata-section-improved {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.metadata-section-improved h4 {
+    margin: 0 0 1rem 0;
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+}
+
+.metadata-grid-improved {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.metadata-item-improved {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .hairstyle-changer {
+        padding: 1rem;
+    }
+}

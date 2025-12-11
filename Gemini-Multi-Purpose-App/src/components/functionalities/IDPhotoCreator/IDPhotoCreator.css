@@ -20,7 +20,7 @@
 
 .preview-description {
     color: var(--text-secondary);
-    font-size: 0.9375rem;
+    font-size: var(--font-size-sm);
     margin-bottom: 2rem;
     max-width: 600px;
     margin-left: auto;
@@ -98,7 +98,7 @@
 
 .crop-info h4 {
     margin: 0 0 1rem 0;
-    font-size: 1.125rem;
+    font-size: var(--font-size-h5);
     font-weight: 600;
     color: var(--text-primary);
 }
@@ -112,7 +112,7 @@
 .crop-info li {
     margin-bottom: 0.75rem;
     color: var(--text-secondary);
-    font-size: 0.9375rem;
+    font-size: var(--font-size-sm);
     padding-left: 0.5rem;
 }
 
@@ -159,11 +159,12 @@
 
 .spec-icon {
     font-size: 1.5rem;
+    /* Icon size */
     margin-bottom: 0.25rem;
 }
 
 .spec-label {
-    font-size: 0.75rem;
+    font-size: var(--font-size-xs);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--text-secondary);
@@ -171,7 +172,7 @@
 }
 
 .spec-value {
-    font-size: 1rem;
+    font-size: var(--font-size-body);
     font-weight: 600;
     color: var(--primary-color);
 }
