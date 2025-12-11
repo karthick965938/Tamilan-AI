@@ -136,11 +136,11 @@ export const ProcessingIndicator: React.FC<ProcessingIndicatorProps> = ({
     const interval = setInterval(() => {
       setElapsedTime(prev => {
         const newElapsed = prev + 100;
-        
+
         // Calculate estimated progress based on elapsed time
         const progressPercent = Math.min((newElapsed / totalDuration) * 100, 95);
         setEstimatedProgress(progressPercent);
-        
+
         // Update current step based on elapsed time
         let accumulatedTime = 0;
         for (let i = 0; i < steps.length; i++) {
@@ -150,7 +150,7 @@ export const ProcessingIndicator: React.FC<ProcessingIndicatorProps> = ({
             break;
           }
         }
-        
+
         return newElapsed;
       });
     }, 100);
@@ -208,62 +208,47 @@ export const ProcessingIndicator: React.FC<ProcessingIndicatorProps> = ({
   return (
     <div className={`processing-indicator ${size} ${hasTimedOut ? 'timeout' : ''} ${className}`}>
       <div className="processing-content">
-        {/* Animation */}
-        <div className="processing-animation">
-          {renderAnimation()}
-        </div>
-
-        {/* Message */}
-        <div className="processing-message">
-          <h3>{displayMessage}</h3>
-          {hasTimedOut && (
-            <p className="timeout-message">
-              Processing is taking longer than expected. Please wait or try again.
-            </p>
-          )}
+        {/* Header: Spinner + Message */}
+        <div className="processing-header">
+          <div className="processing-animation-compact">
+            {renderAnimation()}
+          </div>
+          <div className="processing-info">
+            <h3 className="processing-title">{message || 'Processing...'}</h3>
+            {/* Show current step label here */}
+            {currentStepData && (
+              <p className="processing-step">{currentStepData.label}</p>
+            )}
+          </div>
         </div>
 
         {/* Progress Bar */}
         {showProgress && (
-          <div className="progress-container">
+          <div className="progress-container-compact">
             <div className="progress-bar">
-              <div 
+              <div
                 className="progress-fill"
                 style={{ width: `${displayProgress}%` }}
               ></div>
             </div>
-            <div className="progress-text">
-              {Math.round(displayProgress)}%
+            <div className="progress-meta">
+              <span className="progress-percentage">{Math.round(displayProgress)}%</span>
+              <div className="time-indicator-compact">
+                {!hasTimedOut && (
+                  <span className="estimated-time">
+                    ~{Math.floor((totalDuration - elapsedTime) / 1000)}s left
+                  </span>
+                )}
+              </div>
             </div>
           </div>
         )}
 
-        {/* Step Indicator */}
-        <div className="step-indicator">
-          <div className="steps">
-            {steps.map((step, index) => (
-              <div 
-                key={step.id}
-                className={`step ${index <= currentStep ? 'active' : ''} ${index < currentStep ? 'completed' : ''}`}
-              >
-                <div className="step-dot"></div>
-                <span className="step-label">{step.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Time Indicator */}
-        <div className="time-indicator">
-          <span className="elapsed-time">
-            {Math.floor(elapsedTime / 1000)}s elapsed
-          </span>
-          {!hasTimedOut && (
-            <span className="estimated-time">
-              ~{Math.floor((totalDuration - elapsedTime) / 1000)}s remaining
-            </span>
-          )}
-        </div>
+        {hasTimedOut && (
+          <p className="timeout-message-compact">
+            Taking longer than expected...
+          </p>
+        )}
       </div>
     </div>
   );
