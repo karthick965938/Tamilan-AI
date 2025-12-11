@@ -1,0 +1,1 @@
+export { FashionMoodboard } from './FashionMoodboard';

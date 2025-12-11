@@ -1,0 +1,253 @@
+.clothing-changer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.functionality-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.header-content h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.functionality-icon {
+  font-size: 2rem;
+}
+
+.functionality-description {
+  margin: 0;
+  color: #6b7280;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.reset-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reset-button:hover {
+  background: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+/* Content Layout */
+.functionality-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Upload Section */
+.upload-section {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.upload-section h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.upload-instructions {
+  margin: 0 0 1.5rem 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Upload Progress Indicator */
+.upload-progress {
+  margin-bottom: 1.5rem;
+}
+
+.progress-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Upload Progress Indicator -> Kept as it is unique to ClothingChanger? No, might be used in OOTD too. But keeping for now with variables */
+.step.active .step-number {
+  background: var(--primary-color);
+  color: white;
+}
+
+.step.completed .step-number {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Preservation Notice - Unique to this component */
+.preservation-notice {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(4, 185, 0, 0.05);
+  /* Light primary green */
+  border: 1px solid var(--primary-color);
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.notice-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.notice-content h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.notice-content ul {
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--text-secondary);
+}
+
+.notice-content li {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+/* Duplicates removed: .generate-button, .tips-section, .results-section 
+   They will inherit from shared-styles.css 
+*/
+
+/* Error State */
+.functionality-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+  color: #dc2626;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .clothing-changer {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .functionality-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .header-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .upload-section,
+  .generation-section,
+  .results-section,
+  .tips-section {
+    padding: 1rem;
+  }
+
+  .image-preview {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .combination-arrow {
+    transform: rotate(90deg);
+  }
+
+  .preservation-notice {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  .generate-button {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .functionality-header {
+    text-align: center;
+  }
+
+  .header-content h2 {
+    font-size: 1.25rem;
+    justify-content: center;
+  }
+
+  .progress-indicator {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .progress-line {
+    width: 2px;
+    height: 1.5rem;
+  }
+
+  .generate-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

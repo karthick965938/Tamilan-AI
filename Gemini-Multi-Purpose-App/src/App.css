@@ -1,0 +1,243 @@
+/* CSS Variables for consistent theming */
+:root {
+  /* Brand Colors */
+  --primary-color: #04B900;
+  --secondary-color: #D24B09;
+  --accent-color: #A0CCE5;
+  --text-primary: #000000;
+
+  /* UI Colors */
+  --text-secondary: #666;
+  --background-card: #ffffff;
+  --background-secondary: #f8f9fa;
+  --background-hover: #e9ecef;
+  --border-color: #e1e5e9;
+
+  /* Semantic Colors */
+  --success-color: #04B900;
+  --success-hover: #039600;
+  --error-background: #fef2f2;
+  --error-border: #fecaca;
+  --error-text: #dc2626;
+  --info-background: #e3f2fd;
+  --info-border: #A0CCE5;
+  --info-text: #0288d1;
+}
+
+/* Global app styles */
+.app {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Main layout using CSS Grid */
+.app-layout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f5f5f5;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+}
+
+/* Tablet responsive design */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .app-layout {
+    grid-template-columns: 240px 1fr;
+  }
+}
+
+/* Large screen optimization */
+@media (min-width: 1400px) {
+  .app-layout {
+    grid-template-columns: 320px 1fr;
+  }
+}
+
+/* Mobile-specific app styles */
+.app--mobile {
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+}
+
+.app-layout--mobile {
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Touch-specific styles */
+.app--touch {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.app--touch * {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent zoom on double tap for touch devices */
+.app--touch button,
+.app--touch input,
+.app--touch textarea {
+  touch-action: manipulation;
+}
+
+/* Global typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+p {
+  margin: 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Button styles */
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+button:hover {
+  background-color: var(--success-hover);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Utility classes */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.error {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  padding: 12px;
+  margin: 8px 0;
+}
+
+.success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  padding: 12px;
+  margin: 8px 0;
+}
+
+/* Touch-friendly utilities */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.scrollable {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Responsive text utilities */
+.text-responsive {
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+}
+
+.heading-responsive {
+  font-size: clamp(1.25rem, 4vw, 2rem);
+}
+
+/* Container utilities */
+.container-fluid {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Responsive spacing */
+.spacing-responsive {
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.gap-responsive {
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+/* Mobile-first responsive breakpoints */
+@media (max-width: 480px) {
+
+  .container-fluid,
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  button {
+    min-height: 44px;
+    padding: 12px 16px;
+    font-size: 16px;
+    /* Prevents zoom on iOS */
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+    /* Prevents zoom on iOS */
+  }
+}
+
+@media (max-width: 320px) {
+
+  .container-fluid,
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}

@@ -1,0 +1,96 @@
+{
+    "$schema": "./prompts.schema.json",
+    "version": "1.0.0",
+    "_comment": "This is a template file. Copy this to 'prompts.config.json' and customize your prompts.",
+    "categories": {
+        "portrait-manipulation": {
+            "name": "Portrait Manipulation",
+            "description": "AI tools for transforming portrait images",
+            "functionalities": {
+                "hairstyle-changer": {
+                    "prompt": "YOUR_CUSTOM_PROMPT_HERE",
+                    "system": "System message for AI behavior",
+                    "parameters": {
+                        "output_format": "3x3 grid",
+                        "style_diversity": "high"
+                    }
+                },
+                "id-photo-creator": {
+                    "prompt": "YOUR_CUSTOM_PROMPT_HERE",
+                    "system": "System message for AI behavior",
+                    "parameters": {}
+                }
+            }
+        },
+        "fashion-design": {
+            "name": "Fashion & Style",
+            "description": "Creative tools for fashion and styling",
+            "functionalities": {
+                "ootd-generator": {
+                    "prompt": "YOUR_CUSTOM_PROMPT_HERE",
+                    "system": "System message for AI behavior",
+                    "parameters": {}
+                },
+                "clothing-changer": {
+                    "prompt": "YOUR_CUSTOM_PROMPT_HERE",
+                    "system": "System message for AI behavior",
+                    "parameters": {}
+                },
+                "fashion-moodboard": {
+                    "prompt": "YOUR_CUSTOM_PROMPT_HERE",
+                    "system": "System message for AI behavior",
+                    "parameters": {}
+                }
+            }
+        },
+        "food-photography": {
+            "name": "Food Photography",
+            "description": "Professional food imaging and analysis",
+            "functionalities": {
+                "explosive-food": {
+                    "prompt": "YOUR_CUSTOM_PROMPT_HERE",
+                    "system": "System message for AI behavior",
+                    "parameters": {}
+                },
+                "calorie-annotator": {
+                    "prompt": "YOUR_CUSTOM_PROMPT_HERE",
+                    "system": "System message for AI behavior",
+                    "parameters": {}
+                }
+            }
+        },
+        "product-design": {
+            "name": "Product Design",
+            "description": "Product visualization and packaging",
+            "functionalities": {
+                "product-packaging": {
+                    "prompt": "YOUR_CUSTOM_PROMPT_HERE",
+                    "system": "System message for AI behavior",
+                    "parameters": {}
+                }
+            }
+        },
+        "storytelling": {
+            "name": "Visual Storytelling",
+            "description": "Comic and storyboard creation",
+            "functionalities": {
+                "comic-book-creator": {
+                    "prompt": "YOUR_CUSTOM_PROMPT_HERE",
+                    "system": "System message for AI behavior",
+                    "parameters": {}
+                },
+                "movie-storyboard": {
+                    "prompt": "YOUR_CUSTOM_PROMPT_HERE",
+                    "system": "System message for AI behavior",
+                    "parameters": {}
+                }
+            }
+        }
+    },
+    "global_settings": {
+        "default_quality": "high",
+        "safety_filter": "medium",
+        "aspect_ratio": "auto",
+        "language": "en"
+    }
+}

@@ -1,0 +1,1 @@
+export { ExplosiveFoodGenerator } from './ExplosiveFoodGenerator';

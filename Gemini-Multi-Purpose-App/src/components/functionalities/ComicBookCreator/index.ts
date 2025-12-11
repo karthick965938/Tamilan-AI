@@ -1,0 +1,1 @@
+export { ComicBookCreator } from './ComicBookCreator';

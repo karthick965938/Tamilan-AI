@@ -1,0 +1,1 @@
+export { MovieStoryboard } from './MovieStoryboard';

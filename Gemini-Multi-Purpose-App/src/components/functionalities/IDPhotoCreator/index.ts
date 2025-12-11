@@ -1,0 +1,1 @@
+export { IDPhotoCreator } from './IDPhotoCreator';

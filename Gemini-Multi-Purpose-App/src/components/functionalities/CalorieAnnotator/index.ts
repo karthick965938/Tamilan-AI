@@ -1,0 +1,1 @@
+export { CalorieAnnotator } from './CalorieAnnotator';

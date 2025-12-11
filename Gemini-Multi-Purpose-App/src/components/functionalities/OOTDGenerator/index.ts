@@ -1,0 +1,1 @@
+export { OOTDGenerator } from './OOTDGenerator';

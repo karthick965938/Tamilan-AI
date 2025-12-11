@@ -1,0 +1,370 @@
+/* Shared styles for all functionality components */
+
+/* ============================================
+   UPLOAD SECTION - Modern Premium Design
+   ============================================ */
+/* ============================================
+   UPLOAD SECTION - Modern Premium Design
+   ============================================ */
+.upload-section {
+  background: var(--background-card);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  opacity: 0.8;
+}
+
+.upload-section h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.upload-instructions {
+  margin: 0 0 1.5rem 0;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* ============================================
+   GENERATE BUTTON - Premium CTADesign
+   ============================================ */
+.generate-button {
+  position: relative;
+  width: 100%;
+  padding: 1.125rem 2rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: white;
+  background-color: var(--primary-color);
+  background: var(--primary-color);
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(4, 185, 0, 0.3), 0 2px 8px rgba(4, 185, 0, 0.2);
+  overflow: hidden;
+  letter-spacing: 0.02em;
+}
+
+.generate-button:hover {
+  transform: translateY(-2px);
+  background-color: var(--success-hover);
+  background: var(--success-hover);
+  box-shadow: 0 8px 24px rgba(4, 185, 0, 0.4), 0 4px 12px rgba(4, 185, 0, 0.3);
+}
+
+.generate-button:active {
+  transform: translateY(0);
+}
+
+.generate-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* ============================================
+   TIPS SECTION - Modern Info Card
+   ============================================ */
+.tips-section {
+  background: rgba(210, 75, 9, 0.05);
+  border-radius: 16px;
+  padding: 1.75rem;
+  margin-top: 2rem;
+  border: 1px solid rgba(210, 75, 9, 0.2);
+  box-shadow: 0 4px 12px rgba(210, 75, 9, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+
+.tips-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--secondary-color);
+  border-radius: 16px 0 0 16px;
+}
+
+.tips-section h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tips-section ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style: none;
+}
+
+.tips-section li {
+  position: relative;
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  font-weight: 500;
+  padding-left: 0.5rem;
+}
+
+.tips-section li::before {
+  content: '✓';
+  position: absolute;
+  left: -1.25rem;
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* ============================================
+   METADATA & RESULTS
+   ============================================ */
+.metadata-value {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.metadata-label {
+  color: var(--text-secondary);
+}
+
+.results-section h3 {
+  color: var(--text-primary);
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+
+  .upload-section,
+  .results-section {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .upload-section h3,
+  .results-section h3 {
+    font-size: 1.25rem;
+  }
+
+  .generate-button {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .tips-section {
+    padding: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .metadata-grid-improved {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .results-header {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .reset-button {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .upload-section,
+  .results-section {
+    padding: 1.25rem;
+  }
+
+  .tips-section li {
+    font-size: 0.875rem;
+  }
+
+  .generate-button {
+    font-size: 0.9375rem;
+  }
+}
+
+/* ============================================
+   GENERATION SECTION
+   ============================================ */
+.generation-section {
+  background: var(--background-card);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.generation-controls {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+/* ============================================
+   PROCESS PREVIEW - Fusion/Transfer UI
+   ============================================ */
+.process-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: var(--background-secondary);
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.process-preview::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  opacity: 0.5;
+}
+
+.preview-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.preview-item:hover {
+  transform: translateY(-4px);
+}
+
+.preview-item img {
+  width: 220px;
+  height: 280px;
+  object-fit: contain;
+  background-color: var(--background-card);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 0.5rem;
+}
+
+.preview-item p {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.combination-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: white;
+  color: var(--primary-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  font-size: 1.25rem;
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.preview-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 280px;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #b33600 100%);
+  color: white;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 10px 15px -3px rgba(210, 75, 9, 0.3);
+  position: relative;
+}
+
+.preview-result::after {
+  content: '✨';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.25rem;
+  opacity: 0.5;
+}
+
+/* ============================================
+   ERROR MESSAGE
+   ============================================ */
+.error-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--error-background);
+  border: 1px solid var(--error-border);
+  border-radius: 12px;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.08);
+}
+
+.error-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  color: var(--error-text);
+}
+
+.error-message p {
+  margin: 0;
+  color: var(--error-text);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  font-weight: 500;
+}

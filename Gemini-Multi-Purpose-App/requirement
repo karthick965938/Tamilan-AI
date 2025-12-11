@@ -1,0 +1,53 @@
+Functionality 1
+    Name :Change Multiple Hairstyles
+    Input: Need to upload a portrait image that needs hairstyle changes
+    Prompt: Generate avatars of this person with different hairstyles in a 3x3 grid format
+
+Functionality 2
+    Name: OOTD Outfit
+    Input: Need to upload a person image and clothing image
+    Prompt: Choose the person in Image 1 and dress them in all the clothing and accessories from Image 2. Shoot a series of realistic OOTD-style photos outdoors, using natural lighting, a stylish street style, and clear full-body shots. Keep the person's identity and pose from Image 1, but show the complete outfit and accessories from Image 2 in a cohesive, stylish way.
+
+Functionality 3
+    Name: Character Clothing Change
+    Input: Need to upload person image and clothing image
+    Prompt: Replace the person's clothing in the input image with the target clothing shown in the reference image. Keep the person's pose, facial expression, background, and overall realism unchanged. Make the new outfit look natural, well-fitted, and consistent with lighting and shadows. Do not alter the person's identity or the environment — only change the clothes.
+
+Functionality 4
+    Name: Explosive Food
+    Input: Need to upload a reference image
+    Prompt: Photograph this product in a dramatic modern scene accompanied by explosive outward dynamic arrangement of the key ingredients fresh and raw flying around the product signifying its freshness and nutritional value. promo ad shot, without text, product is emphasized, with the key brand colors as background.
+
+Functionality 5
+    Name: Fashion Moodboard Collage
+    Input: Need to upload a reference image
+    Prompt: A fashion mood board collage. Surround a portrait with cutouts of the individual items the model is wearing. Add handwritten notes and sketches in a playful, marker-style font, and include the brand name and source of each item in English. The overall aesthetic should be creative and cute.
+
+Functionality 6
+    Name: Product Packaging Generation
+    Input: Need to upload a product reference image and a packaging reference image
+    Prompt: Apply the design from Image 1 to the can in Image 2, and place it in a minimalist design setting, professional photography
+
+Functionality 7
+    Name: Food Calorie Annotation
+    Input: Need to upload a food reference image
+    Prompt: annotate this meal with names of food and calorie density and approximate calories
+
+Functionality 8
+    Name: Create an ID Photo
+    Input: Need to upload a portrait reference image
+    Prompt: Crop the head and create a 2-inch ID photo with:
+            1. Blue background
+            2. Professional business attire
+            3. Frontal face
+            4. Slight smile
+
+Functionality 9
+    Name: Create Comic Book
+    Input: Need to upload a reference image
+    Prompt: Based on the uploaded image, make a comic book strip, add text, write a compelling story. I want a superhero comic book.
+    
+Functionality 10
+    Name: Movie Storyboard
+    Input: Need to upload reference image
+    Prompt: Create an addictively intriguing 12 part story with 12 images with these two characters in a classic black and white film noir detective story. Make it about missing treasure that they get clues for throughout and then finally discover. The story is thrilling throughout with emotional highs and lows and ending on a great twist and high note. Do not include any words or text on the images but tell the story purely through the imagery itself.

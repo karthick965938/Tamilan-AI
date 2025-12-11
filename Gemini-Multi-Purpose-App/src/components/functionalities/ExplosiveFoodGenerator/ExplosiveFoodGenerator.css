@@ -1,0 +1,159 @@
+.explosive-food-generator {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Brand Colors Section */
+.brand-colors-section {
+    background: var(--background-card);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
+    margin-bottom: 2rem;
+}
+
+.brand-colors-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.colors-description {
+    margin: 0 0 1.5rem 0;
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+.color-palettes h4,
+.custom-color h4,
+.selected-colors h4 {
+    margin: 0 0 1rem 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.palette-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--background-secondary);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.palette-option:hover {
+    transform: translateY(-2px);
+    background: var(--background-hover);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.palette-option.selected {
+    border-color: var(--primary-color);
+    background: rgba(255, 107, 53, 0.05);
+    /* Match default primary color orange tint */
+}
+
+.palette-colors {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.color-swatch {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.palette-name {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* Custom Color */
+.custom-color {
+    margin-bottom: 2rem;
+}
+
+.custom-color-input {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.color-picker {
+    width: 60px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: none;
+}
+
+.color-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-family: monospace;
+}
+
+/* Selected Colors */
+.selected-palette {
+    display: flex;
+    gap: 1rem;
+}
+
+.selected-color {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 12px;
+    border: 3px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.selected-color:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .explosive-food-generator {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .brand-colors-section {
+        padding: 1.5rem;
+    }
+
+    .palette-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+
+    .palette-name {
+        font-size: 0.875rem;
+    }
+}

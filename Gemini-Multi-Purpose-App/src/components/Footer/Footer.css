@@ -1,0 +1,111 @@
+.main-footer {
+    margin-top: auto;
+    padding: 2rem 0 0 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-branding {
+    text-align: center;
+}
+
+.footer-credits {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.footer-credits a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: 600;
+}
+
+.footer-credits a:hover {
+    color: var(--success-hover);
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--background-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    background-color: white;
+    color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(4, 185, 0, 0.15);
+    border-color: var(--primary-color);
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Specific brand colors on hover for fun */
+/* Specific brand colors on hover for fun */
+/* Instagram gradient */
+.social-link.instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    box-shadow: 0 4px 12px rgba(214, 36, 159, 0.3);
+    border-color: #d6249f;
+    color: white;
+    /* Ensure icon turns white on colorful background */
+}
+
+.social-link.github:hover {
+    background-color: #333;
+    border-color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+.social-link.email:hover {
+    background-color: #ea4335;
+    border-color: #ea4335;
+    box-shadow: 0 4px 12px rgba(234, 67, 53, 0.3);
+    color: white;
+}
+
+.social-link.youtube:hover {
+    background-color: #ff0000;
+    border-color: #ff0000;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .main-footer {
+        margin-top: 2rem;
+        padding: 1.5rem 0;
+    }
+}
