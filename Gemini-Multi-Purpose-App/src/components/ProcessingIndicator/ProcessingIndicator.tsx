@@ -214,7 +214,7 @@ export const ProcessingIndicator: React.FC<ProcessingIndicatorProps> = ({
             {renderAnimation()}
           </div>
           <div className="processing-info">
-            <h3 className="processing-title">{message || 'Processing...'}</h3>
+            <h3 className="processing-title">{displayMessage}</h3>
             {/* Show current step label here */}
             {currentStepData && (
               <p className="processing-step">{currentStepData.label}</p>

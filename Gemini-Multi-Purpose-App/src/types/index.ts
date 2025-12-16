@@ -11,4 +11,8 @@ export * from './state';
 export * from './api';
 
 // Error types
+// Error types
 export * from './errors';
+
+// History types
+export * from './history';

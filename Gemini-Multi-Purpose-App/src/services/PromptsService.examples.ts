@@ -11,7 +11,7 @@ import { getFunctionalityById } from '../constants';
 // Example 1: Simple prompt replacement
 export async function generateWithConfigurablePrompt(
     functionalityId: string,
-    imageData: string
+    _imageData: string
 ) {
     // Get prompt from configuration
     const promptConfig = await promptsService.getPrompt(functionalityId);
@@ -19,7 +19,13 @@ export async function generateWithConfigurablePrompt(
     if (!promptConfig) {
         // Fallback to default from constants
         const functionality = getFunctionalityById(functionalityId);
-        promptConfig.prompt = functionality?.promptTemplate || 'Generate image';
+        // promptConfig is null here so we can't assign to it. Return default mock.
+        return {
+            success: true,
+            prompt: functionality?.promptTemplate || 'Generate image',
+            system: undefined,
+            parameters: undefined
+        };
     }
 
     // Use the configured prompt
@@ -39,7 +45,7 @@ export async function generateWithConfigurablePrompt(
 }
 
 // Example 2: Enhanced prompt with dynamic values
-export async function generateHairstylesConfigurable(imageData: string) {
+export async function generateHairstylesConfigurable(_imageData: string) {
     const promptConfig = await promptsService.getPrompt('hairstyle-changer');
 
     if (!promptConfig) {
@@ -143,6 +149,7 @@ export async function generateHairstylesIntegrated(imageData: string) {
 
         // Make API call
         // const response = await this.callGeminiAPI(request);
+        console.log('Request prepared:', request);
 
         return {
             success: true,
@@ -152,7 +159,7 @@ export async function generateHairstylesIntegrated(imageData: string) {
         console.error('Error generating hairstyles:', error);
         return {
             success: false,
-            error: error.message
+            error: (error as Error).message
         };
     }
 }
@@ -160,8 +167,8 @@ export async function generateHairstylesIntegrated(imageData: string) {
 // Example 6: Real-time prompt updates (for admin panel)
 export async function updatePrompt(
     functionalityId: string,
-    newPrompt: string,
-    newSystem?: string
+    _newPrompt: string,
+    _newSystem?: string
 ) {
     // This would require a server-side endpoint
     // For now, prompts are static files
@@ -207,7 +214,7 @@ export async function validatePromptsConfiguration() {
         } catch (error) {
             results.errors.push({
                 id,
-                error: error.message
+                error: (error as Error).message
             });
         }
     }

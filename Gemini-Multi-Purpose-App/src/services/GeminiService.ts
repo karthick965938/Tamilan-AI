@@ -315,6 +315,7 @@ export class GeminiService {
   /**
    * Get available models and filter for image generation capable ones
    */
+  // @ts-ignore
   private async getAvailableImageGenerationModels(): Promise<string[]> {
     try {
       const allModels = await this.getAvailableModels();

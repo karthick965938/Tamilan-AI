@@ -14,3 +14,5 @@ export type { FeedbackSubmissionResult } from './FeedbackService';
 
 export { default as PromptsService, promptsService } from './PromptsService';
 export type { PromptsConfig, FunctionalityPrompt, CategoryConfig, PromptParameters } from './PromptsService';
+
+export { HistoryService } from './HistoryService';
