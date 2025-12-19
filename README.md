@@ -1,6 +1,6 @@
 # Tamilan AI 🚀
 
-Welcome to the **Tamilan AI**!
+Welcome to the **[Tamilan AI](https://tamilanai.com)**!
 
 ## 🌟 Why This Repo?
 
@@ -54,8 +54,9 @@ We welcome contributors! Whether you want to add new tutorials, improve existing
 
 ## 📞 Connect With Me
 
+- **Website**: [Tamilan AI](https://tamilanai.com)
+- **Email**: [support@tamilanai.com](mailto:support@tamilanai.com)
 - **YouTube**: [Tamilan AI](https://www.youtube.com/channel/UCQLbJH7MraL2Z74Kt2j2OVA)
-- **GitHub**: [Karthick Nagaraj](https://github.com/karthick965938)
 
 ## 📝 License
 
