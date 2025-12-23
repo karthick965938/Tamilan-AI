@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: gemini-creative-studio
     ports:
-      - "80:80"
+      - "3001:80"
     restart: always
     # Environment variables for the container (runtime)
     # Note: VITE_ variables needed for the build must be in .env during build time
