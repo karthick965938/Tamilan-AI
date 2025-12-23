@@ -33,4 +33,7 @@ dist-ssr
 
 # Prompts configuration (keep template, ignore actual config)
 prompts.config.json
-Backend
+# Backend
+
+# Image transformation showcase
+image-preview.html

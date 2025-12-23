@@ -1,0 +1,7 @@
+gemini_studio.db
+__pycache__/
+.env
+
+.venv/
+*.pyc
+.DS_Store
