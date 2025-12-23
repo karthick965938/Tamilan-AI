@@ -6,6 +6,6 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./gemini_studio.db:/app/gemini_studio.db
+      - .:/app
     env_file:
       - .env
