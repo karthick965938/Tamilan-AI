@@ -40,13 +40,7 @@ export class GenerationLogger {
         
         const truncateData = (items: { type: string, data: string }[]) => {
             return items.map(item => {
-                // If data looks like base64 or is very long (> 10kb), truncate it
-                if (item.data && item.data.length > 10240) {
-                    return {
-                        ...item,
-                        data: `[TRUNCATED_DATA_SIZE_${item.data.length}]`
-                    };
-                }
+                // Return full data without truncation
                 return item;
             });
         };
