@@ -66,6 +66,8 @@ origins = [
     "http://127.0.0.1:3001",
     "http://127.0.0.1:5173",
     "http://127.0.0.1:8000",
+    "http://demo.tamilanai.com",
+    "http://tamilanai.com"
 ]
 
 app.add_middleware(
