@@ -40,7 +40,7 @@ export const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ onSave }) => {
                     <a href="https://tamilanai.com" target="_blank" rel="noopener noreferrer" className="modal-logo-link">
                         <img src="/logo.png" alt="Gemini Creative Studio" className="modal-logo" />
                     </a>
-                    <h2>Welcome to Gemini Studio</h2>
+                    <h2>Welcome to Gemini Creative Studio</h2>
                     <p>Please enter your API Key to continue</p>
                 </div>
 
