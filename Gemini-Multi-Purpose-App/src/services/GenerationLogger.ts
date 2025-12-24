@@ -19,7 +19,12 @@ export class GenerationLogger {
     private endpoint: string;
 
     private constructor() {
-        this.endpoint = import.meta.env.VITE_GENERATION_LOG_ENDPOINT || 'http://localhost:8000/api/log';
+        // Force localhost in development mode, otherwise use env var or default strict
+        if (import.meta.env.DEV) {
+            this.endpoint = 'http://localhost:8000/api/log';
+        } else {
+            this.endpoint = import.meta.env.VITE_GENERATION_LOG_ENDPOINT || 'https://api.tamilanai.com/api/log';
+        }
     }
 
     public static getInstance(): GenerationLogger {
@@ -29,16 +34,46 @@ export class GenerationLogger {
         return GenerationLogger.instance;
     }
 
+    private sanitizeLog(log: GenerationLog): GenerationLog {
+        // Deep copy log to avoid mutating original
+        const sanitized = JSON.parse(JSON.stringify(log));
+        
+        const truncateData = (items: { type: string, data: string }[]) => {
+            return items.map(item => {
+                // If data looks like base64 or is very long (> 10kb), truncate it
+                if (item.data && item.data.length > 10240) {
+                    return {
+                        ...item,
+                        data: `[TRUNCATED_DATA_SIZE_${item.data.length}]`
+                    };
+                }
+                return item;
+            });
+        };
+
+        if (sanitized.inputs) {
+            sanitized.inputs = truncateData(sanitized.inputs);
+        }
+        
+        if (sanitized.outputs) {
+            sanitized.outputs = truncateData(sanitized.outputs);
+        }
+
+        return sanitized;
+    }
+
     public async logGeneration(log: GenerationLog): Promise<void> {
         try {
             console.log('Logging generation to API:', this.endpoint);
+            
+            const sanitizedLog = this.sanitizeLog(log);
 
             const response = await fetch(this.endpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(log),
+                body: JSON.stringify(sanitizedLog),
             });
 
             if (!response.ok) {
