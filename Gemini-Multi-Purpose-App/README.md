@@ -276,7 +276,7 @@ This project is private and proprietary. All rights reserved.
 
 - 🌐 Website: [TamilanAI.com](http://tamilanai.com/)
 - 💼 LinkedIn: [karthick-nagarajan-44800710b](https://www.linkedin.com/in/karthick-nagarajan-44800710b/)
-- 📧 Email: [karthick965938@gmail.com](mailto:karthick965938@gmail.com)
+- 📧 Email: [support@tamilanai.com](mailto:support@tamilanai.com)
 - 📺 YouTube: [@TamilanAI-dm4sm](https://www.youtube.com/@TamilanAI-dm4sm)
 
 ## 📧 Support
@@ -284,7 +284,7 @@ This project is private and proprietary. All rights reserved.
 For issues, questions, or suggestions:
 - Open an issue in the repository
 - Check existing issues for solutions
-- Email: karthick965938@gmail.com
+- Email: support@tamilanai.com
 
 ---
 

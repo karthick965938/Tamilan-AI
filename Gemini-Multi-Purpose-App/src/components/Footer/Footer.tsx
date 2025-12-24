@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
                         </svg>
                     </a>
                     <a
-                        href="mailto:karthick965938@gmail.com"
+                        href="mailto:support@tamilanai.com"
                         className="social-link email"
                         title="Email Contact"
                     >
