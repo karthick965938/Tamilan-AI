@@ -66,8 +66,12 @@ origins = [
     "http://127.0.0.1:3001",
     "http://127.0.0.1:5173",
     "http://127.0.0.1:8000",
-    "http://demo.tamilanai.com",
-    "http://tamilanai.com"
+    "https://demo.tamilanai.com",
+    "https://tamilanai.com",
+    "https://api.tamilanai.com",
+    "http://18.234.117.250:8000",
+    "http://18.234.117.250:3000",
+    "http://18.234.117.250:3001"
 ]
 
 app.add_middleware(
