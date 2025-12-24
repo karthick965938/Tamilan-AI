@@ -2,7 +2,7 @@ export { ImageProcessingService } from './ImageProcessingService';
 export type { ValidationResult, ResizeOptions, CompressionOptions, ThumbnailOptions } from './ImageProcessingService';
 
 export { GeminiService } from './GeminiService';
-export { GenerationLogger } from './GenerationLogger';
+
 
 export { ErrorService, errorService } from './ErrorService';
 

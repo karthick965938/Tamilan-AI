@@ -12,7 +12,7 @@ import {
   ApiRequestConfig
 } from '../types/api';
 import { GenerationResult } from '../types/functionality';
-import { GenerationLogger } from './GenerationLogger';
+
 
 export class GeminiService {
   private static instance: GeminiService;
@@ -450,8 +450,7 @@ export class GeminiService {
           const result = this.transformResponse(response.data, request.functionType, model, startTime);
 
           if (result.success) {
-            // Auto-log successful generation to backend
-            this.logGeneration(request, result).catch(err => console.warn('Background logging failed:', err));
+
           }
 
           return result;
@@ -543,47 +542,7 @@ export class GeminiService {
     }
   }
 
-  /**
-   * Log generation to backend API
-   */
-  private async logGeneration(request: GeminiApiRequest, result: GenerationResult): Promise<void> {
-    try {
-      const logger = GenerationLogger.getInstance();
 
-      const inputs: { type: string; data: string; name?: string }[] = [];
-      if (request.imageData) {
-        if (Array.isArray(request.imageData)) {
-          request.imageData.forEach((data, index) => {
-            inputs.push({ type: 'image', data: data as string, name: `Input ${index + 1}` });
-          });
-        } else {
-          inputs.push({ type: 'image', data: request.imageData as string, name: 'Input Image' });
-        }
-      }
-
-      const outputs: { type: string; data: string }[] = [];
-      if (result.imageUrls) {
-        result.imageUrls.forEach(url => outputs.push({ type: 'image', data: url }));
-      } else if (result.imageUrl) {
-        outputs.push({ type: 'image', data: result.imageUrl });
-      }
-
-      await logger.logGeneration({
-        functionId: request.functionType,
-        processingTime: result.metadata?.processingTime || 0,
-        timestamp: new Date().toISOString(),
-        inputs,
-        outputs,
-        metadata: {
-          ...(result.metadata || {}),
-          prompt: request.prompt,
-          model: result.metadata?.apiVersion
-        }
-      });
-    } catch (error) {
-      console.warn('Failed to auto-log generation:', error);
-    }
-  }
 
   /**
    * Validate API request parameters
