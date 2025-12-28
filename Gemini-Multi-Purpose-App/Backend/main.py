@@ -110,7 +110,8 @@ def get_db():
 def get_base_url(request: Optional[Request] = None) -> str:
     """
     Get the base URL for constructing full image URLs.
-    Uses request if available, otherwise falls back to environment variable or default.
+    Prioritizes BASE_URL environment variable, then uses request if available,
+    otherwise falls back to default.
     
     Args:
         request: FastAPI Request object (optional)
@@ -118,11 +119,16 @@ def get_base_url(request: Optional[Request] = None) -> str:
     Returns:
         Base URL string (e.g., "http://localhost:8000" or "https://api.tamilanai.com")
     """
+    # Prioritize BASE_URL environment variable if set
+    if BASE_URL and BASE_URL != "http://localhost:8000": # Only if explicitly set for non-local
+        return BASE_URL
+
     if request:
         # Get base URL from request
         base_url = str(request.base_url).rstrip("/")
         return base_url
-    # Fall back to environment variable or default
+    
+    # Fall back to environment variable (which is already BASE_URL at this point) or default
     return BASE_URL
 
 def save_base64_image(base64_data: str, image_type: str = "png", base_url: Optional[str] = None) -> str:
