@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI, HTTPException, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
@@ -14,6 +14,12 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv()
+
+# Base URL Configuration
+# Get from environment variable or use default
+BASE_URL = os.getenv("BASE_URL", "http://localhost:8000")
+# Remove trailing slash if present
+BASE_URL = BASE_URL.rstrip("/")
 
 # Images Directory Setup
 IMAGES_DIR = Path("uploads/images")
@@ -101,16 +107,35 @@ def get_db():
     finally:
         db.close()
 
-def save_base64_image(base64_data: str, image_type: str = "png") -> str:
+def get_base_url(request: Optional[Request] = None) -> str:
     """
-    Save base64 image data to file and return the URL path.
+    Get the base URL for constructing full image URLs.
+    Uses request if available, otherwise falls back to environment variable or default.
+    
+    Args:
+        request: FastAPI Request object (optional)
+    
+    Returns:
+        Base URL string (e.g., "http://localhost:8000" or "https://api.tamilanai.com")
+    """
+    if request:
+        # Get base URL from request
+        base_url = str(request.base_url).rstrip("/")
+        return base_url
+    # Fall back to environment variable or default
+    return BASE_URL
+
+def save_base64_image(base64_data: str, image_type: str = "png", base_url: Optional[str] = None) -> str:
+    """
+    Save base64 image data to file and return the full URL.
     
     Args:
         base64_data: Base64 encoded image string (with or without data URL prefix)
         image_type: Image format (png, jpg, jpeg, webp). Defaults to png.
+        base_url: Base URL for constructing full URL (optional, uses default if not provided)
     
     Returns:
-        URL path to the saved image (e.g., "/uploads/images/abc123.png")
+        Full URL to the saved image (e.g., "http://localhost:8000/uploads/images/abc123.png")
     """
     try:
         # Remove data URL prefix if present (e.g., "data:image/png;base64,")
@@ -129,11 +154,42 @@ def save_base64_image(base64_data: str, image_type: str = "png") -> str:
         with open(file_path, "wb") as f:
             f.write(image_bytes)
         
-        # Return URL path
-        return f"/uploads/images/{filename}"
+        # Get base URL
+        url_base = base_url if base_url else BASE_URL
+        
+        # Return full URL
+        return f"{url_base}/uploads/images/{filename}"
     except Exception as e:
         print(f"Error saving image: {e}")
         raise HTTPException(status_code=500, detail=f"Failed to save image: {str(e)}")
+
+def convert_to_full_url(relative_url: str, base_url: Optional[str] = None) -> str:
+    """
+    Convert relative URL to full URL.
+    
+    Args:
+        relative_url: Relative URL path (e.g., "/uploads/images/abc123.png")
+        base_url: Base URL (optional, uses default if not provided)
+    
+    Returns:
+        Full URL (e.g., "http://localhost:8000/uploads/images/abc123.png")
+    """
+    if not relative_url:
+        return relative_url
+    
+    # If already a full URL, return as-is
+    if relative_url.startswith("http://") or relative_url.startswith("https://"):
+        return relative_url
+    
+    # Get base URL
+    url_base = base_url if base_url else BASE_URL
+    
+    # Ensure relative URL starts with /
+    if not relative_url.startswith("/"):
+        relative_url = "/" + relative_url
+    
+    # Return full URL
+    return f"{url_base}{relative_url}"
 
 def detect_image_format(base64_data: str) -> str:
     """
@@ -155,34 +211,46 @@ def detect_image_format(base64_data: str) -> str:
     return "png"
 
 @app.post("/api/log")
-def log_generation(log: GenerationLogRequest, db: Session = Depends(get_db)):
+def log_generation(log: GenerationLogRequest, request: Request, db: Session = Depends(get_db)):
     try:
-        # Process inputs: save images to files and replace base64 with URLs
+        # Get base URL from request
+        base_url = get_base_url(request)
+        
+        # Process inputs: save images to files and replace base64 with full URLs
         inputs_data = []
         for i in log.inputs:
             item_dict = i.dict()
             if item_dict.get("type") == "image" and item_dict.get("data"):
-                # Detect image format
-                image_format = detect_image_format(item_dict["data"])
-                # Save image and get URL
-                image_url = save_base64_image(item_dict["data"], image_format)
-                # Replace base64 data with URL
-                item_dict["data"] = image_url
+                # Check if it's already a full URL
+                if item_dict["data"].startswith(("http://", "https://")):
+                    # Already a full URL, keep as is
+                    pass
+                elif item_dict["data"].startswith("/uploads"):
+                    # It's a relative URL, convert to full URL
+                    item_dict["data"] = convert_to_full_url(item_dict["data"], base_url)
+                else:
+                    # It's base64 data, save it and get full URL
+                    image_format = detect_image_format(item_dict["data"])
+                    image_url = save_base64_image(item_dict["data"], image_format, base_url)
+                    item_dict["data"] = image_url
             inputs_data.append(item_dict)
         
-        # Process outputs: save images to files and replace base64 with URLs
+        # Process outputs: save images to files and replace base64 with full URLs
         outputs_data = []
         for o in log.outputs:
             item_dict = o.dict()
             if item_dict.get("type") == "image" and item_dict.get("data"):
-                # Check if it's already a URL (starts with /uploads or http)
-                if item_dict["data"].startswith(("/uploads", "http")):
-                    # Already a URL, keep as is
+                # Check if it's already a full URL
+                if item_dict["data"].startswith(("http://", "https://")):
+                    # Already a full URL, keep as is
                     pass
+                elif item_dict["data"].startswith("/uploads"):
+                    # It's a relative URL, convert to full URL
+                    item_dict["data"] = convert_to_full_url(item_dict["data"], base_url)
                 else:
-                    # It's base64 data, save it
+                    # It's base64 data, save it and get full URL
                     image_format = detect_image_format(item_dict["data"])
-                    image_url = save_base64_image(item_dict["data"], image_format)
+                    image_url = save_base64_image(item_dict["data"], image_format, base_url)
                     item_dict["data"] = image_url
             outputs_data.append(item_dict)
         
@@ -207,29 +275,96 @@ class LogPaginationRequest(BaseModel):
     page: int = 1
     size: int = 10
 
-def serialize_log(log: GenerationRecord) -> dict:
+def normalize_image_data(item: dict, base_url: Optional[str] = None) -> dict:
+    """
+    Normalize image data: convert base64 to full URL if needed, or convert relative URL to full URL.
+    This handles backward compatibility with old records that have base64 data.
+    Also handles corrupted data where base64 prefix might be mixed with URLs.
+    
+    Args:
+        item: Dictionary with 'type' and 'data' fields
+        base_url: Base URL for constructing full URLs (optional)
+    
+    Returns:
+        Dictionary with normalized image data (full URL instead of base64 or relative URL)
+    """
+    if item.get("type") == "image" and item.get("data"):
+        data = str(item["data"]).strip()
+        
+        # Handle corrupted data: if URL is embedded in base64 prefix, extract it
+        if "data:image/" in data and "/uploads/images/" in data:
+            # Extract the URL part after the base64 prefix
+            url_part = data.split("/uploads/images/")
+            if len(url_part) > 1:
+                # Reconstruct the relative URL
+                data = "/uploads/images/" + url_part[1]
+        
+        # Check if it's already a full URL (starts with http)
+        if data.startswith(("http://", "https://")):
+            # Already a full URL, keep as is
+            return item
+        
+        # Check if it's a relative URL (starts with /uploads)
+        if data.startswith("/uploads"):
+            # Convert relative URL to full URL
+            normalized_item = item.copy()
+            normalized_item["data"] = convert_to_full_url(data, base_url)
+            return normalized_item
+        
+        # Check if it's base64 data (starts with data: or is long base64 string)
+        if data.startswith("data:image/") or (len(data) > 100 and not data.startswith("/") and not data.startswith("http")):
+            # It's base64 data, convert it to a full URL
+            try:
+                image_format = detect_image_format(data)
+                image_url = save_base64_image(data, image_format, base_url)
+                # Return new dict with full URL instead of base64
+                normalized_item = item.copy()
+                normalized_item["data"] = image_url
+                return normalized_item
+            except Exception as e:
+                print(f"Warning: Failed to convert base64 image for log item: {e}")
+                # Return original if conversion fails
+                return item
+    # Not an image or no data, return as-is
+    return item
+
+def serialize_log(log: GenerationRecord, base_url: Optional[str] = None) -> dict:
     """
     Convert SQLAlchemy GenerationRecord to dictionary for JSON serialization.
+    Normalizes image data from base64 to full URLs for backward compatibility.
     
     Args:
         log: GenerationRecord SQLAlchemy model instance
+        base_url: Base URL for constructing full URLs (optional)
     
     Returns:
-        Dictionary representation of the log record
+        Dictionary representation of the log record with normalized full image URLs
     """
+    # Normalize inputs: convert any base64 images to full URLs
+    normalized_inputs = []
+    if log.inputs:
+        for input_item in log.inputs:
+            normalized_inputs.append(normalize_image_data(input_item, base_url))
+    
+    # Normalize outputs: convert any base64 images to full URLs
+    normalized_outputs = []
+    if log.outputs:
+        for output_item in log.outputs:
+            normalized_outputs.append(normalize_image_data(output_item, base_url))
+    
     return {
         "id": log.id,
         "function_id": log.function_id,
         "processing_time": log.processing_time,
         "timestamp": log.timestamp,
-        "inputs": log.inputs,  # Already JSON, will be serialized as-is
-        "outputs": log.outputs,  # Already JSON, will be serialized as-is
+        "inputs": normalized_inputs,
+        "outputs": normalized_outputs,
         "metadata_info": log.metadata_info,  # Already JSON, will be serialized as-is
         "created_at": log.created_at
     }
 
 @app.post("/api/get_gcm_logs")
-def get_logs(request: LogPaginationRequest, db: Session = Depends(get_db)):
+def get_logs(request: LogPaginationRequest, http_request: Request, db: Session = Depends(get_db)):
     try:
         skip = (request.page - 1) * request.size
         limit = request.size
@@ -242,8 +377,11 @@ def get_logs(request: LogPaginationRequest, db: Session = Depends(get_db)):
             .limit(limit)\
             .all()
         
-        # Serialize logs to dictionaries (images are already stored as URLs)
-        serialized_logs = [serialize_log(log) for log in logs]
+        # Get base URL from request
+        base_url = get_base_url(http_request)
+        
+        # Serialize logs to dictionaries with full URLs for images
+        serialized_logs = [serialize_log(log, base_url) for log in logs]
             
         return {
             "total_records": total_records,
