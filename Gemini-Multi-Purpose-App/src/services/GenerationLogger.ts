@@ -71,10 +71,17 @@ export class GenerationLogger {
             });
 
             if (!response.ok) {
-                throw new Error(`API returned ${response.status}: ${response.statusText}`);
+                const errorText = await response.text();
+                throw new Error(`API returned ${response.status}: ${response.statusText}. ${errorText}`);
             }
 
-            console.log('Generation logged successfully');
+            // Parse response to get log details
+            const result = await response.json();
+            if (result.status === 'success' && result.id) {
+                console.log(`Generation logged successfully with ID: ${result.id}`);
+            } else {
+                console.log('Generation logged successfully');
+            }
         } catch (error) {
             console.error('Failed to log generation:', error);
             // We explicitly don't throw here to avoid interrupting the user experience
