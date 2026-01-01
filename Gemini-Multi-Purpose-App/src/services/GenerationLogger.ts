@@ -58,7 +58,6 @@ export class GenerationLogger {
 
     public async logGeneration(log: GenerationLog): Promise<void> {
         try {
-            console.log('Logging generation to API:', this.endpoint);
             
             const sanitizedLog = this.sanitizeLog(log);
 
@@ -76,12 +75,12 @@ export class GenerationLogger {
             }
 
             // Parse response to get log details
-            const result = await response.json();
-            if (result.status === 'success' && result.id) {
-                console.log(`Generation logged successfully with ID: ${result.id}`);
-            } else {
-                console.log('Generation logged successfully');
-            }
+            // const result = await response.json();
+            // if (result.status === 'success' && result.id) {
+            //     console.log(`Generation logged successfully with ID: ${result.id}`);
+            // } else {
+            //     console.log('Generation logged successfully');
+            // }
         } catch (error) {
             console.error('Failed to log generation:', error);
             // We explicitly don't throw here to avoid interrupting the user experience
