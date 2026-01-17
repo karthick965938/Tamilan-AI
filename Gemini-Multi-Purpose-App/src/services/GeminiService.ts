@@ -323,9 +323,9 @@ export class GeminiService {
 
       // Filter for models that might support image generation
       // Priority order: image generation specific models first, then standard models
-      // Based on working code, gemini-2.5-flash-image-preview is the correct model
+      // Note: gemini-2.5-flash-image-preview was deprecated Oct 31, 2025, replaced with gemini-2.5-flash-image
       const preferredModels = [
-        'gemini-2.5-flash-image-preview',
+        'gemini-2.5-flash-image',
         'gemini-2.0-flash-exp-image-generation',
         'gemini-3-pro',
         'gemini-2.0-flash-thinking-exp',
@@ -379,9 +379,14 @@ export class GeminiService {
       this.validateRequest(request);
 
       // Use the correct model that supports image generation
-      // Based on working code: gemini-2.5-flash-image-preview
-      // Use only the working model first to avoid duplicate calls
-      const models = ['gemini-2.5-flash-image-preview'];
+      // Note: gemini-2.5-flash-image-preview was deprecated, replaced with gemini-2.5-flash-image
+      // Include fallback models in case the primary model is unavailable
+      const models = [
+        'gemini-2.5-flash-image',
+        'gemini-2.0-flash-exp-image-generation',
+        'gemini-1.5-pro',
+        'gemini-1.5-flash'
+      ];
 
       console.log('Using model:', models[0]);
 
@@ -431,11 +436,9 @@ export class GeminiService {
             // For image generation models, explicitly request image output
             // This helps prevent text-only responses
             if (model.includes('image') || model.includes('flash-image')) {
-              // Don't add responseModalities for gemini-2.5-flash-image-preview
-              // as it may not support that parameter
-              if (!model.includes('2.5-flash-image-preview')) {
-                payload.generationConfig.responseModalities = ['IMAGE'];
-              }
+              // Add responseModalities for image generation models
+              // Note: Some models may not support this parameter, but it's worth trying
+              payload.generationConfig.responseModalities = ['IMAGE'];
             }
 
             // Use the standard endpoint format
